@@ -2,17 +2,17 @@
 namespace InterviewStuff1.Domain;
 public class Temperature
 {
-    public decimal Celcius { get; init; }
-    public decimal Farenheit => (1.8m * Celcius) + 32;
+    public decimal Celsius { get; init; }
+    public decimal Fahrenheit => (1.8m * Celsius) + 32;
 
-    private Temperature(decimal celcius)
+    private Temperature(decimal celsius)
     {
-        Celcius = celcius;
+        Celsius = celsius;
     }
 
-    public static Temperature FromCelcius(decimal celcius)
+    public static Temperature FromCelsius(decimal celsius)
     {
-        return new Temperature(celcius);
+        return new Temperature(celsius);
     }
 
     public static Temperature FromF(decimal f)

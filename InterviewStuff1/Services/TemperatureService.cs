@@ -11,8 +11,8 @@ public class TemperatureService : ITemperatureService
     {
         return type switch
         {
-            0 => Temperature.FromCelcius(temperature).Farenheit,
-            1 => Temperature.FromF(temperature).Celcius,
+            0 => Temperature.FromCelsius(temperature).Fahrenheit,
+            1 => Temperature.FromF(temperature).Celsius,
             _ => throw new NotImplementedException($"Temperature type {type} not implemented")
         };
     }

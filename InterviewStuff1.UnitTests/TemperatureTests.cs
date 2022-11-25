@@ -25,7 +25,7 @@ public class TemperatureTests
         var decimalC = decimal.Parse(c);
         var decimalF = decimal.Parse(expectedF);
 
-        var temp = Temperature.FromCelcius(decimalC).Farenheit;
+        var temp = Temperature.FromCelsius(decimalC).Fahrenheit;
 
         temp.Should().BeApproximately(decimalF, PrecisionToTest);
     }
@@ -46,7 +46,7 @@ public class TemperatureTests
     {
         var decimalC = decimal.Parse(c);
 
-        var temp = Temperature.FromCelcius(decimalC).Celcius;
+        var temp = Temperature.FromCelsius(decimalC).Celsius;
 
         temp.Should().BeApproximately(decimalC, PrecisionToTest);
     }
@@ -66,7 +66,7 @@ public class TemperatureTests
         var decimalF = decimal.Parse(f);
         var decimalC = decimal.Parse(expectedC);
 
-        var temp = Temperature.FromF(decimalF).Celcius;
+        var temp = Temperature.FromF(decimalF).Celsius;
 
         temp.Should().BeApproximately(decimalC, PrecisionToTest);
     }
@@ -87,7 +87,7 @@ public class TemperatureTests
     {
         var decimalF = decimal.Parse(f);
 
-        var temp = Temperature.FromF(decimalF).Farenheit;
+        var temp = Temperature.FromF(decimalF).Fahrenheit;
 
         temp.Should().BeApproximately(decimalF, PrecisionToTest);
     }
