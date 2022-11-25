@@ -24,16 +24,20 @@ function GetTemp() {
 
     const getTempValues = async () => {
         const floatF = parseFloat(values.farenheit);
+        let cResponse = displayValues.cDisplay ?? "";
+        let fResponse = displayValues.fDisplay ?? "";
+
         if (isNumber(floatF)) {
-            const f = await fetch('temperature?type=0&value=' + floatF);
-            setDisplayValues({ ...displayValues, fDisplay: await f.json() });
+            const response = await fetch('temperature?type=1&value=' + floatF);
+            fResponse = await response.json();
         }
 
         const floatC = parseFloat(values.celcius);
         if (isNumber(floatC)) {
-            const c = await fetch('temperature?type=1&value=' + floatC);
-            setDisplayValues({ ...displayValues, cDisplay: await c.json() });
+            const response = await fetch('temperature?type=0&value=' + floatC);
+            cResponse = await response.json();
         }
+        setDisplayValues({ ...displayValues, fDisplay: fResponse, cDisplay: cResponse });
     }
     useEffect(() => {
         getTempValues();
