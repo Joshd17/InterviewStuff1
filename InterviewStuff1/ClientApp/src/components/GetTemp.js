@@ -90,5 +90,4 @@ function GetTemp() {
 
 };
 
-
 export default GetTemp;
